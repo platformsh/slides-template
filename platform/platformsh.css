@@ -317,6 +317,41 @@ div.layout-2up-1down {
   justify-items: center;
 }
 
+.reveal .layout-fixed-grid {
+  display: grid;
+  /* This is a default, intended to be overwritten by a style attribute. */
+  --column-count: 3;
+  grid-template-columns: repeat(var(--column-count), 1fr);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+
+.reveal .layout-fluid-grid {
+  display: grid;
+  /* This is a default, intended to be overwritten by a style attribute. */
+  --cell-width: 300px;
+  grid-template-columns: repeat(auto-fill, minmax(var(--cell-width), 1fr));
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.reveal .layout-fixed-grid > li,
+.reveal .layout-fluid-grid > li {
+  text-align: center;
+  margin: 0;
+  padding: 10px;
+}
+
+.reveal .layout-fluid-grid img,
+.reveal .layout-fixed-grid img
+{
+  max-width: 100%;
+  max-height: 100%;
+}
+
 /* Tables */
 
 .reveal table {
