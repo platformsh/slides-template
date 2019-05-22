@@ -205,20 +205,11 @@
 		]
 	});
 </script>
-<script>
-	Reveal.addEventListener('ready', (event) => {
-		let body = document.getElementsByTagName('body')[0];
-		if (body.hasAttribute('data-usecase')) {
-			let usecase = body.getAttribute('data-usecase');
-			document.querySelectorAll('section[data-usecase]').forEach((elm) => {
-				if (elm.getAttribute('data-usecase') !== usecase) {
-					elm.parentNode.removeChild(elm);
-				}
-			});
-			Reveal.sync();
-		}
-	});
-</script>
+
+<!-- Custom Reveal extension scripts. -->
+<script src="platform/classer.js"></script>
+<script src="platform/countup.js"></script>
+<script src="platform/usecase.js"></script>
 
 </body>
 </html>
