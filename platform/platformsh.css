@@ -356,14 +356,22 @@ div.layout-2up-1down {
 img.screenshot {
   border-radius: 5px;
   max-width: 90%;
+  /* These values based on the default Reveal.js slide size of 960x700. */
+  max-height: 650px;
 }
 
 img.meme {
   width: 90%;
+  /* These values based on the default Reveal.js slide size of 960x700. */
+  max-width: 960px;
+  max-height: 650px;
 }
 
 img.diagram {
   width: 80%;
+  /* These values based on the default Reveal.js slide size of 960x700. */
+  max-width: 960px;
+  max-height: 650px;
 }
 
 /* Quotes of various kinds */
