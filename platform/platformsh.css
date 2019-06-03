@@ -26,8 +26,8 @@ body.skin-gray {
   --color-text: var(--brand-color-neural-black);
   --color-highlight: var(--brand-color-neural-blue);
   --color-shadow: var(--brand-color-light-blue);
-  --color-code-background: rgb(39, 40, 34);
-  --color-code: white;
+  --color-inline-code-background: var(--brand-color-neural-white);
+  --color-inline-code: var(--brand-color-neural-black);
   --color-link: var(--brand-color-primary-blue);
   --color-quote-mark: var(--brand-color-primary-pink);
   --color-emphasis: var(--brand-color-accent-red);
@@ -38,8 +38,8 @@ body.skin-blue {
   --color-text: var(--brand-color-neural-black);
   --color-highlight: var(--brand-color-neural-gray);
   --color-shadow: var(--brand-color-light-blue);
-  --color-code-background: rgb(39, 40, 34);
-  --color-code: white;
+  --color-inline-code-background: var(--brand-color-neural-white);
+  --color-inline-code: var(--brand-color-neural-black);
   --color-link: var(--brand-color-primary-blue);
   /* @todo Pink on blue is terrible but I'm not sure what else isn't worse. */
   --color-quote-mark: var(--brand-color-primary-pink);
@@ -68,7 +68,6 @@ body {
   font-size: 1rem;
   width: 100%;
   text-align: left;
-  background-color: var(--color-highlight);
   padding: 0.8rem;
   /*margin-bottom: 0.8rem;*/
 }
@@ -82,11 +81,13 @@ body {
   bottom: 0;
   left: 0;
   text-align: left;
+  display: flex;
+  align-items: center;
 }
 
 .reveal > footer > img {
   margin-left: 3px;
-  margin-right: 3px;
+  margin-right: 20px;
   height: 1rem;
 }
 
@@ -123,12 +124,19 @@ body {
   margin-bottom: 0.8em;
   line-height: 1.3em;
 }
-
+.reveal .slides pre code div {
+  margin: inherit;
+}
 .reveal ol,
 .reveal dl,
 .reveal ul {
   display: inline-block;
   text-align: left;
+}
+.reveal ol ol,
+.reveal dl dl,
+.reveal ul ul {
+  margin-left: 2em;
 }
 
 ul.inline {
@@ -229,48 +237,53 @@ aside {
 
 /* Pick one of these sizes to change the font size of code */
 
-.reveal pre.font--8 {
+.reveal pre code.font--8 {
   font-size: 8px;
 }
 
-.reveal pre.font--12 {
+.reveal pre code.font--12 {
   font-size: 12px;
 }
 
-.reveal pre.font--14 {
+.reveal pre code.font--14 {
   font-size: 14px;
 }
 
-.reveal pre.font--16 {
+.reveal pre code.font--16 {
   font-size: 16px;
 }
 
-.reveal pre.font--18 {
+.reveal pre code.font--18 {
   font-size: 18px;
 }
 
-.reveal pre.font--20 {
+.reveal pre code.font--20 {
   font-size: 20px;
 }
 
-.reveal pre.font--24 {
+.reveal pre code.font--24 {
   font-size: 24px;
 }
 
-.reveal pre.font--30 {
+.reveal pre code.font--30 {
   font-size: 30px;
 }
 
 .reveal code {
   font-family: var(--brand-font-mono), monospace;
+  border-radius: 2px;
+}
+
+.hljs-ln-line > .hljs-comment {
+  color: var(--color-shadow);
 }
 
 /* This is for inline code */
 .reveal :not(pre) > code {
-  color: var(--color-code);
-  background-color: var(--color-code-background);
-  padding: 0.1em;
-  border-radius: 3px;
+  color: var(--color-inline-code);
+  background-color: var(--color-inline-code-background);
+  padding: 0 8px;
+  border-radius: 2px;
 }
 
 .reveal pre > code {
@@ -314,16 +327,6 @@ div.layout-col.vcentered {
   justify-content: space-evenly;
 }
 
-div.layout-2up-1down {
-  display: grid;
-  grid-template-rows: 2fr 1fr;
-  grid-template-columns: 1fr 1fr;
-  grid-template-areas:
-    "left right"
-    "bottom bottom";
-  justify-items: center;
-}
-
 .reveal .layout-fixed-grid {
   display: grid;
   /* This is a default, intended to be overwritten by a style attribute. */
@@ -356,7 +359,16 @@ div.layout-2up-1down {
 .reveal .layout-fixed-grid img
 {
   max-width: 100%;
-  max-height: 100%;
+}
+
+div.layout-2up-1down {
+  display: grid;
+  grid-template-rows: 2fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "left right"
+    "bottom bottom";
+  justify-items: center;
 }
 
 /* Tables */
@@ -433,6 +445,14 @@ blockquote {
   position: relative;
   font-size: 1.5rem;
 }
+.quote {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.quote blockquote {
+  display: inline-block;
+}
 
 /* @todo I'm not really happy with how this works out visually. */
 blockquote::before {
@@ -440,8 +460,17 @@ blockquote::before {
   color: var(--color-quote-mark);
   font-size: 8rem;
   position: absolute;
-  left: -0.3em;
-  top: 3rem;
+  left: -0.4em;
+  top: 2.5rem;
+  z-index: -5;
+}
+blockquote::after {
+  content: '\201D';
+  color: var(--color-quote-mark);
+  font-size: 8rem;
+  position: absolute;
+  right: -0.4em;
+  top: 2.5rem;
   z-index: -5;
 }
 
@@ -476,4 +505,3 @@ blockquote strong {
    */
   background-size: contain;
 }
-
