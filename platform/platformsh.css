@@ -188,8 +188,8 @@ p.bigdeal {
 
 .reveal p.fullscreen-credit {
   /* Used to show credit URL for a background image. */
-  /*position: absolute;*/
-  /*margin-top: 90%;*/
+  position: absolute;
+  margin-top: 90%;
   font-size: small;
   width: available;
   background-color: var(--color-highlight);
