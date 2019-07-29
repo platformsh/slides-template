@@ -321,6 +321,9 @@ aside {
   display: flex;
   justify-content: space-around;
   flex-wrap: nowrap;
+  /* Makes this rule work nicely on ULs. */
+  list-style: none;
+  text-align: center;
 }
 
 .reveal .layout-col.equal-width > * {
