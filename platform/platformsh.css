@@ -316,18 +316,18 @@ aside {
 
 /* Layouts. These must all apply to div, not section elements. */
 
-div.layout-col {
+.reveal .layout-col {
   /* By default this will be top-aligned. */
   display: flex;
   justify-content: space-around;
   flex-wrap: nowrap;
 }
 
-div.layout-col.equal-width > * {
+.reveal .layout-col.equal-width > * {
   flex: 1;
 }
 
-div.layout-col.vcentered {
+.reveal .layout-col.vcentered {
   align-items: center;
 }
 
