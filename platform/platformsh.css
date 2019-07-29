@@ -334,6 +334,14 @@ aside {
   align-items: center;
 }
 
+.reveal .layout-col.fixed-height > *,
+.reveal .layout-col.fixed-height  img {
+  /* This is a default, intended to be overwritten by a style attribute. */
+  /* Set the style attribute on the .fixed-height element; it will apply to the children. */
+  --height: 200px;
+  height: var(--height);
+}
+
 .reveal .layout-stacked {
   /* When using this layout, you must specify an explicit height on the element or it will have no meaningful effect. */
   display: flex;
