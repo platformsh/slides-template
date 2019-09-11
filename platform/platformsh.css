@@ -140,6 +140,8 @@ body {
 .reveal ul {
   display: inline-block;
   text-align: left;
+  margin-left: 2em;
+  margin-right: 2em;
 }
 .reveal ol ol,
 .reveal dl dl,
