@@ -239,6 +239,10 @@ p.credit {
   word-wrap: break-word;
 }
 
+.reveal em {
+  color: var(--color-emphasis);
+  font-style: italic;
+}
 
 aside {
   /* Used mainly for captioned things */
