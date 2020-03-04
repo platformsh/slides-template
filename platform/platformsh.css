@@ -120,6 +120,7 @@ body {
 .reveal .slides p,
 .reveal .slides ul,
 .reveal .slides ol,
+.reveal .slides dl,
 .reveal .slides div,
 .reveal .slides pre,
 .reveal .slides blockquote {
@@ -159,6 +160,16 @@ ul.inline {
 
 ul.inline li {
   display: inline;
+}
+
+dt {
+  font-weight: bold;
+  line-height: 1.3em;
+}
+
+dd {
+  margin-left: 2em;
+  line-height: 1.3em;
 }
 
 .reveal a, .reveal a:visited, .reveal a:focus {
