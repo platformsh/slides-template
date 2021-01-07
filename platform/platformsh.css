@@ -120,7 +120,6 @@ body {
 .reveal .slides p,
 .reveal .slides ul,
 .reveal .slides ol,
-.reveal .slides dl,
 .reveal .slides div,
 .reveal .slides pre,
 .reveal .slides blockquote {
@@ -150,6 +149,17 @@ body {
   margin-left: 2em;
 }
 
+dt {
+  font-weight: bold;
+  line-height: 1.5em;
+}
+
+dd {
+  margin-left: 2em;
+  line-height: 1.5em;
+}
+
+
 ul.inline {
   display: flex;
   list-style: none;
@@ -160,16 +170,6 @@ ul.inline {
 
 ul.inline li {
   display: inline;
-}
-
-dt {
-  font-weight: bold;
-  line-height: 1.3em;
-}
-
-dd {
-  margin-left: 2em;
-  line-height: 1.3em;
 }
 
 .reveal a, .reveal a:visited, .reveal a:focus {
