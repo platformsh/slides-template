@@ -185,7 +185,8 @@ ul.inline li {
   font-size: 1.5rem;
 }
 
-p.bigdeal {
+p.bigdeal,
+li.bigdeal {
   /* This is used in certain animations. */
   font-size: 200%;
   color: Red;
